@@ -42,16 +42,18 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_name"
         tools:text="(55) 11 986105657" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/img_call"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="8dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@null"
         android:src="@drawable/baseline_phone_enabled_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/vertical_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/image" />
+        app:layout_constraintTop_toBottomOf="@+id/image"
+        app:tint="#77942E" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical_guideline"
@@ -60,16 +62,18 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/imageButton2"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="8dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@null"
         android:src="@drawable/baseline_auto_delete_24"
         app:layout_constraintEnd_toStartOf="@id/img_call"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image" />
+        app:layout_constraintTop_toBottomOf="@+id/image"
+        app:tint="#FF0000" />
 
     <TextView
         android:id="@+id/tv_send_message"
