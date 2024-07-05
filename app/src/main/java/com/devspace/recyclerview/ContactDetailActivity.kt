@@ -1,5 +1,6 @@
 package com.devspace.recyclerview
 
+import android.content.Intent
 import android.media.Image
 import android.os.Bundle
 import android.widget.ImageView
@@ -18,9 +19,25 @@ class ContactDetailActivity : AppCompatActivity() {
         val tvName = findViewById<TextView>(R.id.tv_name)
         val tvPhone = findViewById<TextView>(R.id.tv_phone)
         val image = findViewById<ImageView>(R.id.image)
+        val tvShare = findViewById<TextView>(R.id.tv_share_contact)
 
         val name = intent.getStringExtra("name")
         val phone = intent.getStringExtra("phone")
         val icon = intent.getIntExtra("icon", R.drawable.sample1 )
+
+        tvName.text = name
+        tvPhone.text = phone
+        image.setImageResource(icon)
+
+        tvShare.setOnClickListener {
+            // Intent implicita, copiar contato
+             val sendIntent: Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, "$name $phone")
+                type = "text/plain"
+            }
+            val shareIntent = Intent.createChooser(sendIntent, null)
+            startActivity(shareIntent)
+        }
         }
     }
